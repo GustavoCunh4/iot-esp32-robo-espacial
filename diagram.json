@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "author": "Rafael, Gustavo, Manuela",
+  "author": "Luiz Gustavo Cunha, Rafael Crusoé, Manuella Serravalle",
   "editor": "wokwi",
   "parts": [
     { "type": "wokwi-breadboard", "id": "bb1", "top": -127.8, "left": -246.8, "attrs": {} },

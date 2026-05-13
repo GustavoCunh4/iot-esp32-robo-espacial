@@ -1,3 +1,9 @@
+/*
+  Controle Remoto ESP32 - Robo Espacial
+  Autores: Luiz Gustavo Cunha, Rafael Crusoé, Manuella Serravalle
+  Simulacao: https://wokwi.com/projects/463279112690217985
+*/
+
 #include <Arduino.h>
 
 const int pinoVRx = 34;         // Eixo X do Joystick

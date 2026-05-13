@@ -3,6 +3,11 @@
 ## Nome do Projeto
 Controle Remoto com Joystick para ESP32 — Robô Espacial
 
+## Autores
+- Luiz Gustavo Cunha
+- Rafael Crusoé
+- Manuella Serravalle
+
 ## Objetivo da Etapa
 Desenvolver o firmware do controle remoto do robô espacial utilizando ESP32. O controle lê as entradas de um joystick analógico e de um botão, envia comandos de direção pela serial e indica o estado do robô (ligado/desligado) por meio de LEDs.
 
@@ -24,7 +29,7 @@ Desenvolver o firmware do controle remoto do robô espacial utilizando ESP32. O 
 3. Abra o **Serial Monitor** no canto inferior da tela
 4. Interaja com o joystick: mova para cima, baixo, esquerda ou direita
 5. Pressione o botão verde para ligar/desligar o robô
-6. Observe os comandos sendo enviados no Serial Monitor e os LEDs indicando o estado
+6. Observe os comandos no Serial Monitor e os LEDs indicando o estado
 
 ## Funcionamento
 
