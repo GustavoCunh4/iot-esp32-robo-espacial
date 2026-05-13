@@ -24,7 +24,7 @@ Desenvolver o firmware do controle remoto do robô espacial utilizando ESP32. O 
 
 ## Como Rodar no Wokwi
 
-1. Acesse o link do projeto: [https://wokwi.com/projects/463279112690217985](https://wokwi.com/projects/463279112690217985)
+1. Acesse o link do projeto: [https://wokwi.com/projects/463930067275160577](https://wokwi.com/projects/463930067275160577)
 2. Clique em **Play** (botão verde) para iniciar a simulação
 3. Abra o **Serial Monitor** no canto inferior da tela
 4. Interaja com o joystick: mova para cima, baixo, esquerda ou direita

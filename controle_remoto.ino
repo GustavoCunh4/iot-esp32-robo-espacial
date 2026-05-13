@@ -1,7 +1,7 @@
 /*
   Controle Remoto ESP32 - Robo Espacial
   Autores: Luiz Gustavo Cunha, Rafael Crusoé, Manuella Serravalle
-  Simulacao: https://wokwi.com/projects/463279112690217985
+  Simulacao: https://wokwi.com/projects/463930067275160577
 */
 
 const int pinoVRx = 34;
