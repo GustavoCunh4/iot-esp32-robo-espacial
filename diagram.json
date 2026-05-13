@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Rafael, Gustavo, Manuela",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -127.8, "left": -246.8, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 115.2, "left": 542.44, "attrs": {} },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": -135,
+      "left": 456.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -48.1,
+      "left": 70.7,
+      "rotate": 90,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -65.6,
+      "left": 330.6,
+      "rotate": 180,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -65.6,
+      "left": 292.2,
+      "rotate": 180,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "joystick1:GND", "bb1:bn.50", "black", [ "v0" ] ],
+    [ "joystick1:VCC", "bb1:bp.50", "red", [ "v0" ] ],
+    [ "joystick1:HORZ", "esp:34", "green", [ "v0" ] ],
+    [ "joystick1:VERT", "esp:35", "green", [ "v0" ] ],
+    [ "btn1:2.l", "bb1:tn.27", "green", [ "v0" ] ],
+    [ "bb1:36b.i", "esp:32", "green", [ "v0" ] ],
+    [ "bb1:61t.b", "bb1:tn.50", "green", [ "v0" ] ],
+    [ "bb1:57t.b", "bb1:tn.46", "green", [ "v0" ] ],
+    [ "bb1:60t.b", "esp:25", "green", [ "v0" ] ],
+    [ "bb1:56t.b", "esp:26", "green", [ "v0" ] ],
+    [ "btn1:1.l", "bb1:36t.c", "", [ "$bb" ] ],
+    [ "btn1:2.l", "bb1:34t.c", "", [ "$bb" ] ],
+    [ "btn1:1.r", "bb1:36b.h", "", [ "$bb" ] ],
+    [ "btn1:2.r", "bb1:34b.h", "", [ "$bb" ] ],
+    [ "led1:A", "bb1:60t.c", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:61t.c", "", [ "$bb" ] ],
+    [ "led2:A", "bb1:56t.c", "", [ "$bb" ] ],
+    [ "led2:C", "bb1:57t.c", "", [ "$bb" ] ],
+    [ "esp:5V", "bb1:bp.48", "red", [ "h0" ] ],
+    [ "esp:GND.1", "bb1:bn.48", "black", [ "h0" ] ],
+    [ "esp:GND.2", "bb1:tn.49", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
