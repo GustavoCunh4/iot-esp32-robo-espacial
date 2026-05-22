@@ -11,7 +11,7 @@
 // Sensor de luminosidade
 const int pinoLDR = 2;
 
-// Sensor ultrassonico HC-SR04
+// Sensor ultrassônico HC-SR04
 const int pinoTrig = 12;
 const int pinoEcho = 13;
 
@@ -33,11 +33,11 @@ const int pinoJoyY = 1;
 Servo servoMotor;
 
 // ==========================
-// CONFIGURACOES DE REDE
+// CONFIGURAÇÕES DE REDE
 // ==========================
 
-const char *ssid = "Rafa Crusoé";
-const char *password = "12345689";
+const char* ssid = "Rafa Crusoé";
+const char* password = "12345689";
 
 // ==========================
 // CALLMEBOT
@@ -54,7 +54,7 @@ String supabaseUrl = "https://chzipdtmlyvsrxoijelj.supabase.co/rest/v1/leituras"
 String supabaseKey = "sb_publishable_Tg4BpQK7kxQ9qRi7B43Eug_-WqNzjIF";
 
 // ==========================
-// VARIAVEIS DE CONTROLE
+// VARIÁVEIS DE CONTROLE
 // ==========================
 
 unsigned long tempoUltimaLeitura = 0;
@@ -73,7 +73,7 @@ const float limiteDistanciaCm = 30.0;
 const unsigned long intervaloReconexaoWiFi = 5000;
 
 // ==========================
-// FUNCAO PARA LER DISTANCIA
+// FUNÇÃO PARA LER DISTÂNCIA
 // ==========================
 
 float medirDistanciaCm() {
@@ -126,12 +126,16 @@ void verificarWiFi() {
 
 void sendMessage(String message) {
   if (!wifiConectado()) {
-    Serial.println("Wi-Fi desconectado. Nao foi possivel enviar mensagem via CallmeBot.");
+    Serial.println("Wi-Fi desconectado. Não foi possível enviar mensagem via CallmeBot.");
     return;
   }
 
-  String url = "https://api.callmebot.com/whatsapp.php?phone=" + phoneNumber +
-               "&apikey=" + apiKey + "&text=" + urlEncode(message);
+  String url = "https://api.callmebot.com/whatsapp.php?phone="
+               + phoneNumber
+               + "&apikey="
+               + apiKey
+               + "&text="
+               + urlEncode(message);
 
   WiFiClientSecure client;
   client.setInsecure();
@@ -155,12 +159,21 @@ void sendMessage(String message) {
 // SUPABASE
 // ==========================
 
-void enviarLeituraSupabase(int luminosidade, float distanciaCm, bool objetoProximo,
-                           int probabilidade, int joyX, int joyY, int angulo,
-                           String estadoRobo, String estadoLEDVerde,
-                           String estadoLEDVermelho, String statusWifi) {
+void enviarLeituraSupabase(
+  int luminosidade,
+  float distanciaCm,
+  bool objetoProximo,
+  int probabilidade,
+  int joyX,
+  int joyY,
+  int angulo,
+  String estadoRobo,
+  String estadoLEDVerde,
+  String estadoLEDVermelho,
+  String statusWifi
+) {
   if (!wifiConectado()) {
-    Serial.println("Supabase: Wi-Fi desconectado. Dados nao enviados.");
+    Serial.println("Supabase: Wi-Fi desconectado. Dados não enviados.");
     return;
   }
 
@@ -197,7 +210,7 @@ void enviarLeituraSupabase(int luminosidade, float distanciaCm, bool objetoProxi
 
   int httpResponseCode = http.POST(json);
 
-  Serial.print("Codigo HTTP Supabase: ");
+  Serial.print("Código HTTP Supabase: ");
   Serial.println(httpResponseCode);
 
   String resposta = http.getString();
@@ -323,7 +336,8 @@ void loop() {
       estadoRobo = "ERRO DE WIFI";
       estadoLEDVerde = "APAGADO";
       estadoLEDVermelho = "ACESO";
-    } else if (probabilidade <= 75) {
+    }
+    else if (probabilidade <= 75) {
       emAlerta = false;
 
       digitalWrite(pinoLEDVerde, HIGH);
@@ -332,7 +346,8 @@ void loop() {
       estadoRobo = "EXPLORACAO NORMAL";
       estadoLEDVerde = "ACESO";
       estadoLEDVermelho = "APAGADO";
-    } else {
+    }
+    else {
       digitalWrite(pinoLEDVerde, LOW);
       digitalWrite(pinoLEDVermelho, HIGH);
 
@@ -426,7 +441,8 @@ void loop() {
 
     if (!wifiOk) {
       Serial.println("Mensagem: Wi-Fi desconectado. LED vermelho aceso.");
-    } else if (probabilidade <= 75) {
+    }
+    else if (probabilidade <= 75) {
       Serial.println("Mensagem: Exploracao normal. Nenhum indicio relevante detectado.");
     } else {
       Serial.println("Mensagem: ALERTA! Alta probabilidade de vida detectada!");
@@ -436,8 +452,17 @@ void loop() {
     Serial.println();
 
     enviarLeituraSupabase(
-        intensidadeLuz, distanciaCm, objetoDetectadoAtual, probabilidade,
-        valorJoyX, valorJoyY, anguloServo, estadoRobo, estadoLEDVerde,
-        estadoLEDVermelho, wifiOk ? "CONECTADO" : "DESCONECTADO");
+      intensidadeLuz,
+      distanciaCm,
+      objetoDetectadoAtual,
+      probabilidade,
+      valorJoyX,
+      valorJoyY,
+      anguloServo,
+      estadoRobo,
+      estadoLEDVerde,
+      estadoLEDVermelho,
+      wifiOk ? "CONECTADO" : "DESCONECTADO"
+    );
   }
 }
