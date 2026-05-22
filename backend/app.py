@@ -11,8 +11,8 @@ app = Flask(__name__)
 load_dotenv()
 
 
-SUPABASE_URL = os.getenv("SUPABASE_URL", "https://chzipdtmlyvsrxoijelj.supabase.co/rest/v1/leituras")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY", "sb_publishable_Tg4BpQK7kxQ9qRi7B43Eug_-WqNzjIF")
+SUPABASE_URL = os.getenv("SUPABASE_URL", "https://SEU-PROJETO.supabase.co/rest/v1/leituras")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY", "SUA_SUPABASE_KEY")
 
 
 def supabase_headers() -> dict[str, str]:

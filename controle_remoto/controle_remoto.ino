@@ -36,22 +36,22 @@ Servo servoMotor;
 // CONFIGURAÇÕES DE REDE
 // ==========================
 
-const char* ssid = "Rafa Crusoé";
-const char* password = "12345689";
+const char* ssid = "SEU_WIFI_SSID";
+const char* password = "SUA_WIFI_SENHA";
 
 // ==========================
 // CALLMEBOT
 // ==========================
 
-String phoneNumber = "557191156488";
-String apiKey = "5262726";
+String phoneNumber = "SEU_NUMERO_COM_DDI";
+String apiKey = "SUA_CALLMEBOT_API_KEY";
 
 // ==========================
 // SUPABASE
 // ==========================
 
-String supabaseUrl = "https://chzipdtmlyvsrxoijelj.supabase.co/rest/v1/leituras";
-String supabaseKey = "sb_publishable_Tg4BpQK7kxQ9qRi7B43Eug_-WqNzjIF";
+String supabaseUrl = "https://SEU-PROJETO.supabase.co/rest/v1/leituras";
+String supabaseKey = "SUA_SUPABASE_KEY";
 
 // ==========================
 // VARIÁVEIS DE CONTROLE

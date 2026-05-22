@@ -97,8 +97,8 @@ copy .env.example .env
 5. Se quiser sobrescrever os valores padrao, edite o arquivo `.env` ou exporte as variaveis manualmente:
 
 ```powershell
-$env:SUPABASE_URL="https://chzipdtmlyvsrxoijelj.supabase.co/rest/v1/leituras"
-$env:SUPABASE_KEY="sb_publishable_Tg4BpQK7kxQ9qRi7B43Eug_-WqNzjIF"
+$env:SUPABASE_URL="https://SEU-PROJETO.supabase.co/rest/v1/leituras"
+$env:SUPABASE_KEY="SUA_SUPABASE_KEY"
 ```
 
 6. Inicie a API:
@@ -128,9 +128,9 @@ curl "http://localhost:8000/leituras?limit=10"
 Tambem e possivel consultar o endpoint REST:
 
 ```powershell
-curl "https://chzipdtmlyvsrxoijelj.supabase.co/rest/v1/leituras?select=*&order=id.desc&limit=10" `
-  -H "apikey: sb_publishable_Tg4BpQK7kxQ9qRi7B43Eug_-WqNzjIF" `
-  -H "Authorization: Bearer sb_publishable_Tg4BpQK7kxQ9qRi7B43Eug_-WqNzjIF"
+curl "https://SEU-PROJETO.supabase.co/rest/v1/leituras?select=*&order=id.desc&limit=10" `
+  -H "apikey: SUA_SUPABASE_KEY" `
+  -H "Authorization: Bearer SUA_SUPABASE_KEY"
 ```
 
 ## Regras de Funcionamento
